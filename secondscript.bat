@@ -11,7 +11,7 @@ mkdir %log_path%
 rem Генерируем файлы в папке log для достижения размера 0.5 GB
 echo Generation tests
 for /L %%i in (1,1,60) do (
-    fsutil file createnew %log_path%\file_%%i.txt 10485760
+    fsutil file createnew %log_path%\file_%%i.txt 10485760 #создание файлов по 10мб
 )
 
 echo Test 1: X = 50%, N = 5 files
@@ -25,7 +25,7 @@ if exist "%log_path%\backup\archive.7z" (
 )
 
 rem Очищаем log_path после теста 1
-del /q "%log_path%\*"
+del /q "%log_path%\*" #/q файл удаляется без запроса
 
 rem Опять генерируем файлы в папке log для достижения размера 0.5 GB
 for /L %%i in (1,1,60) do (
