@@ -8,8 +8,8 @@ TEST_FILE_PREFIX="test_file"
 
 # Создание тестовой директории и заполнение ее файлами
 setup_test_environment() {
-    mkdir -p $LOG_DIR
-    mkdir -p $BACKUP_DIR
+    mkdir -p $LOG_DIR #-p создает промежуточнве каталоги
+    mkdir -p $BACKUP_DIR #-p создает промежуточнве каталоги
 
     # Генерация файлов размером 100 MB каждый
     for i in {1..6}; do
@@ -24,8 +24,8 @@ test_compress_five_files_80_percent() {
 }
 
 # Очищаем директории log и backup
-    rm -f $LOG_DIR/*
-    rm -f $BACKUP_DIR/*
+    rm -f $LOG_DIR/* #-f не запрашивает подтверждение удаления
+    rm -f $BACKUP_DIR/* #-f не запрашивает подтверждение удаления
 
 # Генерация файлов размером 100 MB каждый
     for i in {1..6}; do
@@ -76,5 +76,5 @@ test_no_compression_40_percent
 test_invalid_backup_directory
 
 # Очистка тестовой директории
-rm -rf $LOG_DIR/*
-rm -rf $BACKUP_DIR/*
+rm -rf $LOG_DIR/* #-rf удаление файлов и каталогов
+rm -rf $BACKUP_DIR/* #-rf удаление файлов и каталогов
