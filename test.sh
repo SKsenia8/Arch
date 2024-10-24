@@ -13,7 +13,7 @@ setup_test_environment() {
 
     # Генерация файлов размером 100 MB каждый
     for i in {1..6}; do
-        dd if=/dev/zero of="$LOG_DIR/${TEST_FILE_PREFIX}${i}.txt" bs=100M count=1
+        dd if=/dev/zero of="$LOG_DIR/${TEST_FILE_PREFIX}${i}.txt" bs=100M count=1 # создания файлов, заполненных нулями, 
     done
 }
 
