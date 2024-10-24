@@ -17,7 +17,7 @@ for /L %%i in (1,1,60) do ( #/L - для создания цикла с числ
 echo Test 1: X = 50%, N = 5 files
 set /a proc=50
 set /a n=5
-call "C:\test.bat" "%log_path%" %proc% %n%
+call "C:\test.bat" "%log_path%" %proc% %n% #call для выполнения другого пакетного файла
 if exist "%log_path%\backup\archive.7z" (
     echo Test 1 passed
 ) else (
