@@ -10,7 +10,7 @@ mkdir %log_path%
 
 rem Генерируем файлы в папке log для достижения размера 0.5 GB
 echo Generation tests
-for /L %%i in (1,1,60) do (
+for /L %%i in (1,1,60) do ( #/L - для создания цикла с числовым диапозоном, %%i переменная 
     fsutil file createnew %log_path%\file_%%i.txt 10485760 #создание файлов по 10мб
 )
 
